@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="match_parent">
 
-    <RelativeLayout
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/nameChar1"
+        app:layout_constraintEnd_toEndOf="@+id/relativeLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameChar1">
 
         <include
             android:id="@+id/numpadElement"
@@ -22,11 +36,9 @@
             android:id="@+id/topPanel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView"
             android:layout_alignStart="@+id/numpadElement"
             android:layout_alignEnd="@+id/numpadElement"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="32dp"
             android:layout_marginEnd="0dp"
             android:orientation="horizontal">
 
@@ -95,11 +107,51 @@
                 android:text="=" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/rightPanel"
-            android:layout_marginEnd="0dp" />
     </RelativeLayout>
-</FrameLayout>
+
+    <TextView
+        android:id="@+id/nameChar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="み"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toStartOf="@+id/nameChar2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/nameChar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ょ"
+        app:layout_constraintEnd_toStartOf="@+id/nameChar3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/nameChar1"
+        app:layout_constraintTop_toTopOf="@+id/nameChar1" />
+
+    <TextView
+        android:id="@+id/nameChar3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="う"
+        app:layout_constraintEnd_toStartOf="@+id/nameChar4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/nameChar2"
+        app:layout_constraintTop_toTopOf="@+id/nameChar2" />
+
+    <TextView
+        android:id="@+id/nameChar4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="じ"
+        app:layout_constraintEnd_toEndOf="@+id/relativeLayout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/nameChar3"
+        app:layout_constraintTop_toTopOf="@+id/nameChar3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
